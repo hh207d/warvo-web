@@ -17,8 +17,8 @@
     <h1>
       <svg class="wordmark" viewBox="0 -540 1962 580" role="img" aria-label="Warvo"><g transform="scale(1 -1)"><path d="M180 0 10 500H169L261 208L353 500H507L596 215L690 500H849L678 0H525L429 313L333 0Z" class="w"/><path transform="translate(824.0 155.0) scale(0.38)" d="M212 -12Q123 -12 74.0 28.0Q25 68 25 141Q25 220 76.0 259.0Q127 298 219 298H341Q336 338 317.5 360.5Q299 383 258 383Q230 383 209.0 370.0Q188 357 173 334L37 379Q54 416 83.5 446.0Q113 476 156.0 494.0Q199 512 256 512Q334 512 388.0 483.0Q442 454 469.0 402.0Q496 350 496 279L494 0H348L346 51Q326 20 292.0 4.0Q258 -12 212 -12ZM246 106Q275 106 297.0 118.0Q319 130 331.5 150.5Q344 171 344 195V198H278Q228 198 206.0 184.0Q184 170 184 145Q184 127 200.5 116.5Q217 106 246 106Z" class="a"/><path transform="translate(1029.2 155.0) scale(0.38)" d="M51 0V500H207V407Q238 454 286.0 478.0Q334 502 384 502V350Q338 350 297.5 340.0Q257 330 232.0 309.5Q207 289 207 257V0Z" class="a"/><path transform="translate(1180.4 155.0) scale(0.38)" d="M209 0 6 500H167L287 178L406 500H567L364 0Z" class="a"/><circle cx="1670.1" cy="250.0" r="195.9" fill="none" class="o" stroke-width="152.0"/></g></svg>
     </h1>
-    <p class="tagline">Die Therme piept. Die Anleitung liegt irgendwo im Keller.</p>
-    <p class="lead">Mit Warvo hast du sie auf dem Handy, dazu das Typenschild, die Ersatzteilnummer und den Termin für die nächste Wartung. Für alle im Haushalt.</p>
+    <p class="tagline" id="tagline">Die Therme piept. Die Anleitung liegt irgendwo im Keller.</p>
+    <p class="lead" id="lead">Mit Warvo hast du sie auf dem Handy, dazu das Typenschild, die Ersatzteilnummer und den Termin für die nächste Wartung. Für alle im Haushalt.</p>
     <p class="status"><span class="dot" aria-hidden="true"></span>In Arbeit. Kommt zuerst für Android.</p>
   </header>
 
@@ -45,5 +45,28 @@
   <span>© 2026 Warvo</span>
   <nav><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
 </footer>
+<script>
+  // Bei jedem Aufruf ein anderer Spruch aus dem Alltag; ohne JavaScript bleibt
+  // der erste. Er wechselt nicht, während man liest.
+  const sprueche = [
+    ["Die Therme piept. Die Anleitung liegt irgendwo im Keller.",
+     "Mit Warvo hast du sie auf dem Handy, dazu das Typenschild, die Ersatzteilnummer und den Termin für die nächste Wartung. Für alle im Haushalt."],
+    ["Der Rauchmelder piept nachts um drei. Welche Batterie war das noch?",
+     "Warvo weiß es: Ersatzteile, Wartung und Anleitung zu jedem Gerät, auch ohne Internet."],
+    ["Wasser im Keller. Und wo ist der Hauptwasserhahn?",
+     "In Warvo steht es, mit Foto, einen Tipp entfernt. Auch wenn das Internet gerade nicht geht."],
+    ["Die Spülmaschine zeigt E24. Das Handbuch ist längst im Altpapier.",
+     "Warvo holt die Anleitung zu Marke und Modell oder nimmt deine Papieranleitung als Scan auf."],
+    ["Wann wurde eigentlich der Filter der Dunstabzugshaube gewechselt?",
+     "Warvo erinnert rechtzeitig und weiß, wann es zuletzt gemacht wurde."],
+    ["Der Handwerker fragt nach der Typennummer. Die steht hinten am Gerät.",
+     "In Warvo ist das Typenschild fotografiert und die Nummer gleich ausgelesen."],
+    ["Der Sicherungskasten hat 24 Schalter. Keiner ist beschriftet.",
+     "Warvo zeigt im Notfall, welcher Schalter wohin gehört, mit Foto und Notiz."],
+  ];
+  const [spruch, satz] = sprueche[Math.floor(Math.random() * sprueche.length)];
+  document.getElementById("tagline").textContent = spruch;
+  document.getElementById("lead").textContent = satz;
+</script>
 </body>
 </html>
